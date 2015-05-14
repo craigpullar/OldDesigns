@@ -1,0 +1,91 @@
+<HTML>
+	<HEAD>
+		<STYLE>
+			html {
+				background-image:url('back.jpg');
+				background-repeat: no-repeat;
+				background-size: 100%;
+			}
+			.content {
+				background-color:white;
+				width:300px;
+				height:250px;
+				position:absolute;
+				left:60%;
+				top:50%;
+				margin-top:-125px;
+				border-radius:5px;
+			}
+			a#ToggleContent {
+				background-color:#E7B956;
+				position:absolute;
+				width:150px;
+				height:30px;
+				left:50%;
+				margin-left:-75px;
+				border-radius:5px;
+				font-family:'Open Sans', sans-serif;
+				color:white;
+				text-align:center;
+				padding-top:15px;
+				cursor:pointer;
+				bottom:5px;
+				font-size:10pt;
+			}
+			a#ToggleContent:hover {
+				background-color: #E7B956;
+			}
+			.about {
+				background-color:white;
+				width:100%;
+				height:100px;
+				position:absolute;
+				bottom:-100px;
+				display:none;
+				left:0px;
+			}
+			.about p {
+				color :#2a3a4d;
+				font-family:'Open Sans', sans-serif;
+				text-align:center;
+				position:absolute;
+				padding-top:25px;
+				left:10px;
+				right:10px;
+				font-size:10pt;
+			}
+		</STYLE>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#ToggleContent").click(function(){
+
+					if($(this).css('bottom') == '5px') {
+						$(this).animate({bottom :'105px'});
+						$("div.about").show();
+						$("div.about").animate({bottom: '0px',});
+					}
+					else {
+						$(this).animate({bottom :'5px'});
+						var div = $("div.about")
+						div.animate({bottom: '-100px',},function() {
+							$("div.about").hide();
+						});
+						
+					}
+
+				});
+			});
+		</script>
+	</HEAD>
+	<BODY>
+		<div class="content">
+			
+		</div>
+		<a id="ToggleContent">How are we doing it?</a>
+		<div class="about">
+			<p>Vestium is going to allow you to share fashion with people all over the world as well as letting you follow the latest fashion trends, brought to you by the people you love. And this is all going to happen from your iPhone. </br>Aren't we nice.</p>
+		</div>
+	</BODY>
+
+</HTML>
